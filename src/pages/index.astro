@@ -3,6 +3,8 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import Hero from "../components/Hero.astro";
 import Header from "../components/Header.astro";
+
+const allPosts = await Astro.glob("../content/*.md");
 ---
 
 <Layout title="David Sanchez">
@@ -33,23 +35,19 @@ import Header from "../components/Header.astro";
         ></path>
       </g>
     </svg>
-    <Header
-    title="David's website"
-    />
-    <Hero/>
+    <Header title="David's website" />
+    <Hero />
     <ul role="list" class="link-card-grid">
-      <Card
-        title="Hello astro"
-        time="2nd Sep 2023"
-        body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur animi temporibus nesciunt praesentium dolore mollitia itaque minus soluta,culpa eius atque dignissimos. Molestias explicabo corporis voluptatem?"
-        href="https://www.davidsanchezuk.com/"
-      />
-      <Card
-        title="Hello astro"
-        time="2nd Sep 2023"
-        body="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dolores, possimus pariatur animi temporibus nesciunt praesentium dolore mollitia itaque minus soluta,culpa eius atque dignissimos. Molestias explicabo corporis voluptatem?"
-        href="https://www.davidsanchezuk.com/"
-      />
+      {
+        allPosts.map((item) => (
+          <Card
+            title={item?.frontmatter?.title}
+            time={item?.frontmatter?.pubDate}
+            body={item?.frontmatter?.description}
+            tags={item?.frontmatter?.tags}
+          />
+        ))
+      }
     </ul>
   </main>
 </Layout>

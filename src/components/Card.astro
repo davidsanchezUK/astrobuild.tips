@@ -3,10 +3,10 @@ interface Props {
   title: string;
   time: string;
   body: string;
-  href: string;
+  tags: string[];
 }
 
-const { title, time, body, href } = Astro.props;
+const { title, time, body, tags } = Astro.props;
 ---
 
 <article
@@ -25,13 +25,16 @@ const { title, time, body, href } = Astro.props;
       <time datetime="2022-10-10" class="block text-xs text-white/90">
         {time}
       </time>
-
-      <a href={href}>
+      <a href="#">
         <h3 class="mt-0.5 text-lg text-white">
           {title}
         </h3>
       </a>
-
+      {
+        tags.map((item) => (
+          <span class="mt-0.1 text-sm text-white">{item + " "}</span>
+        ))
+      }
       <p class="mt-2 line-clamp-3 text-sm/relaxed text-white/95">
         {body}
       </p>
