@@ -1,9 +1,9 @@
 ---
-title: "Hello JavaScript"
+title: 'Hello JavaScript'
 pubDate: 2024-05-07
-description: "Hello this is my first recommendation"
+description: 'Hello this is my first recommendation'
 image:
-tags: ["astro", "javascript"]
+tags: ['astro', 'javascript']
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent augue massa, faucibus sit amet bibendum quis, vulputate ac nulla. Vestibulum velit urna, ornare nec velit a, rhoncus fermentum elit. Nam nulla metus, vehicula vel sodales ut, consequat quis ex. Fusce eu tincidunt dui. Integer rhoncus enim risus, id bibendum odio ornare nec. Nulla quis eleifend lorem, sed dictum orci. Duis tristique quis massa id faucibus. Donec a mauris sed lectus suscipit molestie. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla nec tortor vitae enim gravida auctor sit amet ac felis. Nam tempor fringilla elementum.
