@@ -1,4 +1,3 @@
-
 # Collaborative utilities using Astro
 
 This project is a introductory use of Astro as a static site generator and frontend compiler that enables developers to build fast, efficient, and highly optimized websites. It uses a component-driven approach and has gained popularity for its performance and developer experience. Here are some common uses and benefits of using Astro:
@@ -31,5 +30,4 @@ In summary, Astro is a powerful tool for building performant, statically generat
 
 ## Authors
 
-- [@davidsanchezUK](https://github.com/davidsanchezUK)
-
+-   [@davidsanchezUK](https://github.com/davidsanchezUK)

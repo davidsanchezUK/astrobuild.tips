@@ -1,0 +1,86 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Card from '../../components/Card.astro';
+import Hero from '../../components/Hero.astro';
+import Header from '../../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('tips')).sort(
+    (a, b) => a.data.pubDate.valueOf() -  b.data.pubDate.valueOf()
+);
+console.log(posts);
+---
+
+<Layout title="David Sanchez">
+    <main>
+        <svg
+            version="1.0"
+            xmlns="http://www.w3.org/2000/svg"
+            width="180.000000pt"
+            height="180.000000pt"
+            viewBox="0 0 180.000000 180.000000"
+            preserveAspectRatio="xMidYMid meet"
+        >
+            <g
+                transform="translate(0.000000,180.000000) scale(0.100000,-0.100000)"
+                fill="#102C57"
+                stroke="none"
+            >
+                <path
+                    d="M1035 1425 l-40 -175 -30 7 c-16 5 -75 8 -131 8 -99 0 -102 -1 -189
+-44 -98 -48 -183 -125 -252 -227 -43 -63 -93 -157 -93 -174 0 -5 22 -10 48
+-10 l48 0 -19 -72 c-28 -105 -29 -283 -2 -357 57 -154 210 -206 417 -141 79
+25 76 25 70 -5 l-4 -25 214 0 214 0 63 277 c35 153 65 288 68 301 5 21 2 22
+-46 22 -28 0 -51 2 -51 4 0 8 170 749 176 769 5 16 -9 17 -208 17 l-214 0 -39
+-175z m-115 -487 c0 -7 -6 -39 -14 -70 l-13 -57 51 -3 52 -3 -31 -133 c-21
+-93 -36 -137 -48 -144 -9 -5 -38 -8 -64 -6 -66 4 -88 36 -87 126 1 37 9 84 18
+106 9 21 16 42 16 47 0 5 -23 9 -51 9 l-51 0 34 47 c19 26 53 57 77 70 48 25
+111 31 111 11z"
+                ></path>
+            </g>
+        </svg>
+        <Header title="David's website" />
+        <Hero />
+        <ul role="list" class="link-card-grid">
+            {
+                posts.map((post) => (
+                    <Card
+                        title={post.data.title}
+                        time={post.data.pubDate}
+                        body={post.data.descrtiption}
+                        tags={post.data.tags}
+                        slug={post.slug}
+                    />
+                ))
+            }
+        </ul>
+    </main>
+</Layout>
+
+<style>
+    main {
+        margin: auto;
+        padding: 1rem;
+        width: 800px;
+        max-width: calc(100% - 2rem);
+        color: white;
+        font-size: 20px;
+        line-height: 1.6;
+    }
+    .astro-a {
+        position: absolute;
+        top: -32px;
+        left: 50%;
+        transform: translatex(-50%);
+        width: 220px;
+        height: auto;
+        z-index: -1;
+    }
+
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+    }
+</style>
