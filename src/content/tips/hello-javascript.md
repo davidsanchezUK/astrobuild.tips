@@ -2,7 +2,7 @@
 title: 'Hello JavaScript'
 pubDate: 2024-05-07
 description: 'Hello this is my first recommendation'
-image: https://api.lorem.space/image/fashion?w=640&h=480&r=3027
+image: https://images.unsplash.com/photo-1696263077754-055b110c5820?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80
 tags: ['astro', 'javascript']
 layout: '../../layouts/Posts.astro'
 ---
